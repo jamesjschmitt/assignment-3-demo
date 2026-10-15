@@ -1,0 +1,285 @@
+/* layout.css — shared by page-schmitt.html (story) and hero.html */
+
+/* skip link (hidden until it receives keyboard focus) */
+.skip-link{
+	position:absolute;
+	top:8px;
+	left:8px;
+	z-index:1000;
+	padding:8px 16px;
+	background:#ffffff;
+	color:#000080;
+	font-family:'Inter', sans-serif;
+	font-weight:bold;
+	border:2px solid #000080;
+}
+
+/* visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible{
+	outline:3px solid #ffbf47;
+	outline-offset:2px;
+	box-shadow:none;
+}
+
+main:focus{
+	outline:none;
+}
+
+/* Navbar */
+.navbar {
+	background-color: #000080 !important;
+	padding: 10px 20px;
+
+	--bs-navbar-color: #ffffff;
+	--bs-navbar-hover-color: #cce0ff;
+	--bs-navbar-active-color: #ffffff;
+	--bs-navbar-brand-color: #ffffff;
+	--bs-navbar-brand-hover-color: #ffffff;
+	--bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.6);
+	--bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-brand{
+	font-family:'Merriweather', serif;
+	font-weight:bold;
+}
+
+.navbar .nav-link{
+	font-family:'Inter', sans-serif;
+	color:#ffffff;
+}
+
+.navbar .nav-link.active{
+	text-decoration:underline;
+	text-underline-offset:6px;
+}
+
+.navbar .navbar-brand:focus-visible,
+.navbar .nav-link:focus-visible,
+.navbar .navbar-toggler:focus-visible{
+	outline:3px solid #ffbf47;
+	outline-offset:2px;
+	box-shadow:none;
+}
+
+/* header */
+.logo{
+	height:50px;
+	max-width:100%;
+}
+
+/* headline */
+h1{
+	font-family:'Merriweather', serif;
+	font-size:34px;
+	font-weight:bold;
+	color:#0b29a1;
+}
+
+/* byline */
+.byline{
+	font-family:'Inter', sans-serif;
+	font-size:13px;
+	color:#595959;
+}
+
+/* paragraphs */
+p{
+	font-family:'Inter', sans-serif;
+	font-size:16px;
+}
+
+/* first paragraph */
+.lede{
+	font-weight:bold;
+}
+
+/* cover image */
+.cover{
+	width:100%;
+}
+
+/* links */
+a{
+	color:#0a58ca;
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+article p a{
+	text-decoration:underline;
+}
+
+/* names */
+.person-name{
+	font-weight:bold;
+	color:#a0522d;
+}
+
+/* quotes */
+.quote-text{
+	font-style:italic;
+}
+
+/* drop cap */
+.lede::first-letter{
+	font-family:'Merriweather', serif;
+	font-size:52px;
+	font-weight:bold;
+	color:#000080;
+	float:left;
+	line-height:1;
+	margin-right:6px;
+}
+
+/* section titles: aside + "You Might Also Like" */
+.aside-title,
+.section-title{
+	font-family:'Merriweather', serif;
+	font-size:20px;
+	color:#000080;
+	border-bottom:2px solid #0a9e01;
+	padding-bottom:8px;
+	margin-bottom:12px;
+}
+
+.list-group-item{
+	font-size:14px;
+	color:#222;
+}
+
+.list-group-item .source,
+.card-kicker{
+	display:block;
+	font-size:11px;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#0a6e01;
+}
+
+/* You Might Also Like cards */
+.also-like .card{
+	border-top:3px solid #000080;
+}
+
+.also-like .card-kicker{
+	margin-bottom:4px;
+}
+
+.also-like .card-title{
+	font-family:'Merriweather', serif;
+	font-size:17px;
+	font-weight:bold;
+	color:#222;
+}
+
+.also-like .card-text{
+	font-size:14px;
+	color:#444;
+}
+
+.also-like .card:hover{
+	box-shadow:0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.also-like .card:focus-within{
+	outline:3px solid #ffbf47;
+	outline-offset:2px;
+}
+
+.also-like .stretched-link:focus-visible{
+	outline:none;
+}
+
+/* footer */
+.logo-small{
+	height:28px;
+}
+
+.copyright{
+	font-size:13px;
+	color:#595959;
+}
+
+.social a{
+	display:inline-block;
+	font-size:24px;
+	margin:0 7px;
+}
+
+/* ---------- HERO (hero.html) ---------- */
+.hero{
+	position:relative;
+	min-height:420px;
+	display:flex;
+	align-items:flex-end;
+	padding:48px 40px;
+	margin:32px 0;
+	border-radius:8px;
+	overflow:hidden;
+	color:#ffffff;
+	/* dark gradient over the photo keeps white text above 4.5:1 */
+	background:
+		linear-gradient(to top, rgba(0, 0, 60, 0.92) 0%, rgba(0, 0, 60, 0.75) 55%, rgba(0, 0, 60, 0.55) 100%),
+		url("../images/cover.png") center / cover no-repeat;
+	background-color:#000080;
+}
+
+.hero h1{
+	color:#ffffff;
+	font-size:40px;
+	margin-bottom:16px;
+}
+
+.hero p{
+	font-size:18px;
+	max-width:640px;
+	margin-bottom:24px;
+}
+
+.hero .hero-kicker{
+	font-size:13px;
+	font-weight:bold;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	margin-bottom:8px;
+}
+
+.hero .btn-hero{
+	background-color:#ffffff;
+	color:#000080;
+	font-family:'Inter', sans-serif;
+	font-weight:bold;
+	border:none;
+	padding:12px 24px;
+}
+
+.hero .btn-hero:hover{
+	background-color:#cce0ff;
+	text-decoration:none;
+}
+
+/* xs and sm */
+@media (max-width: 767.98px){
+	h1{
+		font-size:28px;
+	}
+
+	.hero{
+		min-height:340px;
+		padding:32px 20px;
+	}
+
+	.hero h1{
+		font-size:28px;
+	}
+
+	.hero p{
+		font-size:16px;
+	}
+}
